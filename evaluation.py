@@ -1,6 +1,7 @@
 import torch
 import sys
 import network 
+import matplotlib.pyplot as plt
 
 def train(model, device, train_loader, optimizer, epoch, switch, weight=0.5):
     losses = []
