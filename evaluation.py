@@ -95,3 +95,16 @@ model = network.ConvolutionalAutoencoder()
 classifier_loss, classifier_accuracy = main(model, 'classifier_loss')
 encoder_loss, encoder_accuracy = main(model, 'encoder_loss')
 joint_loss, joint_accuracy = main(model, 'joint')
+
+fig, ax = plt.subplots()
+
+ax.plot([x/100 for x in classifier_accuracy], label='Classifier loss only')
+ax.plot([x/100 for x in encoder_accuracy], label='Encoder loss only')
+ax.plot([x/100 for x in joint_accuracy], label='Joint loss')
+
+ax.set_xlabel('Epoch')
+ax.set_ylabel('Accuracy')
+plt.legend()
+
+plt.grid()
+plt.show()
